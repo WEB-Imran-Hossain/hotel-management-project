@@ -1,5 +1,4 @@
 // src/App.jsx
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import MainLayout from '../src/layouts/MainLayout'
 import Home from '../src/pages/Home'
@@ -9,12 +8,14 @@ import Contact from '../src/pages/Contact'
 function App() {
   return (
     <Routes>
-      <Route element={<MainLayout />}>
-      <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Route>
-    </Routes>
+    {/* MainLayout is applied to all nested routes */}
+    <Route path="/" element={<MainLayout />}>
+      {/* Home page can be accessed from the root path as well as /home */}
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+    </Route>
+  </Routes>
   )
 }
 
