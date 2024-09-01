@@ -35,3 +35,4 @@ const SignInForm = ({ isRightPanelActive }) => (
 );
 
 export default SignInForm;
+

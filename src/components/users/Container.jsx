@@ -10,19 +10,22 @@ const Container = () => {
   const handleSignInClick = () => setIsRightPanelActive(false);
 
   return (
-    <div
-      id="container"
-      className={`bg-white rounded-lg shadow-lg relative overflow-hidden w-[768px] max-w-full min-h-[480px] transition-all duration-700 ease-in-out ${
-        isRightPanelActive ? "right-panel-active" : ""
-      }`}
-    >
-      <SignInForm isRightPanelActive={isRightPanelActive} />
-      <SignUpForm isRightPanelActive={isRightPanelActive} />
-      <Overlay
-        handleSignUpClick={handleSignUpClick}
-        handleSignInClick={handleSignInClick}
-        isRightPanelActive={isRightPanelActive}
-      />
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div
+        id="container"
+        className={`bg-white rounded-lg shadow-lg relative overflow-hidden w-[768px] max-w-full min-h-[480px] transition-all duration-700 ease-in-out ${
+          isRightPanelActive ? "right-panel-active" : ""
+        }`}
+      >
+        <SignInForm isRightPanelActive={isRightPanelActive} />
+        <SignUpForm isRightPanelActive={isRightPanelActive} />
+        
+        <Overlay
+          handleSignUpClick={handleSignUpClick}
+          handleSignInClick={handleSignInClick}
+          isRightPanelActive={isRightPanelActive}
+        />
+      </div>
     </div>
   );
 };
