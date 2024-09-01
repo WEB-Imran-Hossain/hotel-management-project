@@ -23,6 +23,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/container">Container</Link></li> {/* This will navigate to the Container component */}
       </ul>
 
       {/* Social Media Icons and Sign In Button */}
@@ -32,9 +33,9 @@ const Navbar = () => {
           <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
           <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
         </ul>
-        <Link to="/sign-up" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-colors duration-300 ease-in-out">
-          Sign In
-        </Link>
+        <Link to="/container" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-colors duration-300 ease-in-out">
+          Join Now
+        </Link> {/* Update the route to '/container' */}
       </div>
 
       {/* Mobile Side Panel */}
@@ -48,9 +49,9 @@ const Navbar = () => {
             <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a></li>
             <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
           </ul>
-          <Link to="/sign-up" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-colors duration-300 ease-in-out mt-4">
-            Sign In
-          </Link>
+          <Link to="/container" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition-colors duration-300 ease-in-out mt-4">
+            Join Now
+          </Link> {/* Update the route to '/container' */}
         </div>
       </div>
     </nav>
