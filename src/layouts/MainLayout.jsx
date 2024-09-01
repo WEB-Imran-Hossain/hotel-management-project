@@ -1,18 +1,23 @@
-// src/layouts/MainLayout.jsx
-import Navbar from '../components/shared/Navbar'
-import Footer from '../components/shared/Footer'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom';
+import Footer from '../components/shared/Footer';
+import Navbar from '../components/shared/Navbar';
 
 const MainLayout = () => {
+  const location = useLocation();
+  
+  // Check if the current route is '/container'
+  const isContainerPage = location.pathname === '/container';
+  
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
+    <div>
+      {/* Conditionally render the header and footer */}
+      {!isContainerPage && <Navbar />}
+      <main>
         <Outlet />
       </main>
-      <Footer />
+      {!isContainerPage && <Footer />}
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
